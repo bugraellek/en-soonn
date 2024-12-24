@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <p>Js</p>
+    <p>
+        10.9tl
+        12.8tl
+        23.75tl
+
+
+
+    </p>
+    <p id="fonksiyon"></p>
+    <p id="temperature"></p>
+    <p id="persons"></p>
+    <p id="tamisim"></p>
+    <p id="obje"></p>
+    <p id="text"></p>
+    <p id="dizi"></p>
+    <p id="stok"></p>
+    <p id="stokiki"></p>
+    <p id="stokuc"></p>
+    <p id="muz"></p>
+    <p id="öğrenciler"></p>
+    <p id="öğrenciYasi"></p>
+    
+
+    <hr>
+    <hr>
+    <button onclick="document.getElementById('saat').innerHTML=Date()"
+        style="border: 1 solid black; width: 80px; height: 20px; border-radius: 5px; display: flex; background-color: darkcyan;">saat
+        kaç</button>
+    <p id="saat"></p>
+    <button onclick="this.innerHTML=Date() " style="background-color:azure">saat kaç </button>
+    <hr>
+    <p id="otel1"></p>
+    <p id="otel2"></p>
+    <p id="otel3"></p>
+
+    <script>
+        let sayi = 3.14;
+        let yuvarlanmış = Math.round(sayi)
+        console.log(yuvarlanmış);
+
+        // console.log(Math.round(0.9));
+
+        console.log('Gorkem' + "  " + "Demirkol");
+        console.log('£' + (20.95 + 7.99));
+        console.log('£' + ((2094 + 799) / 100));
+        // alert('sepet tutarınız ' + ' = ' + '£' + (2094 + 799) / 100)
+        console.log('Gorkem\'in Dükkanı');
+
+        let x = 3;
+        let y = 4;
+        console.log(x **= y);
+        // x-=y;
+        // x**=y
+
+        let a = true;
+        let b = false;
+        // Boolean
+        const person = {
+            firstName: "Gorkem",
+            lastName: "Demirkol"
+        };
+
+
+        //obje tanımladık
+        const color = "yellow";
+        //strings
+        const cars = ["Seat", "BMW", "Volvo"];
+        function myFunction(p1, p2) {
+            return p1 * p2;
+        }
+        let result = myFunction(4, 3);
+        console.log(result);
+        document.getElementById("fonksiyon").innerHTML = result;
+
+        let sicaklik = 77;
+
+
+
+
+
+        let text = "hava sıcaklığı " + " " + SicaklikDonusturucu(sicaklik) + "Santigrat Derece";
+        document.getElementById("temperature").innerHTML = text;
+
+        function SicaklikDonusturucu(fahrenheit) {
+            return (fahrenheit - 32) / 1.8;
+        }
+        const persons = {
+            firstName: "Görkem",
+            lastName: "Demirkol",
+            age: 24,
+            eyeColor: "Kahve",
+            marriage: "Bekar",
+            child: 0,
+            // fullName:function(){
+            //     return this.firstName+" "+this.lastName;
+            // }
+        };
+        // persons.fullName =function(){
+        //         return (this.firstName+" "+this.lastName).toUpperCase();
+        //     };
+        persons.nation = "Türkiye";
+        // bilgiyi silmek için delete persons.age;
+        // delete persons["age"];
+        // document.getElementById("persons").innerHTML = persons.firstName + " 'in " + "yaşı " + persons.age + " " + persons.marriage + " ve " + persons.child + " çocuğu vardır. "+persons.nation+" 'de yaşar";
+        // document.getElementById("tamisim").innerHTML=persons.fullName();
+        // document.getElementById("obje").innerHTML=persons;
+
+
+        let texts = "";
+        for (let x in persons) {
+            texts += persons[x] + " ";
+        }
+        document.getElementById("text").innerHTML = texts;
+
+        const dizi = Object.values(persons);
+        document.getElementById("dizi").innerHTML = dizi;
+
+        const pcStocks = { hp: 300, dell: 1200, casper: 150, apple: 50 };
+        let stockInfo = "";
+        for (let [pcStock, amount] of Object.entries(pcStocks)) {
+            stockInfo += pcStock + " : " + amount + "<br>"
+        };
+        document.getElementById("stok").innerHTML = stockInfo;
+
+        let propertyPersons = JSON.stringify(persons);
+        document.getElementById("stokiki").innerHTML = propertyPersons;
+        document.getElementById("stokuc").innerHTML = JSON.stringify(pcStocks.hp);
+
+        function fruits(name, color, size, soft, taste) {
+            this.namediff = name;
+            this.colordiff = color;
+            this.sizediff = size;
+            this.softdiff = soft;
+            this.tastediff = taste;
+            this.specs = "fruit";
+        }
+        fruits.prototype.store = "stores";
+
+        const muz = new fruits("banana", "yellow", "medium", "hard", "sweet")
+        const elma = new fruits("apple", "red", "medium", "hard", "sour");
+        const kavun = new fruits("melon", "yellow", "large", "soft", "sweet");
+
+        document.getElementById("muz").innerHTML = "benim seçtiğim meyvenin " + muz.colordiff + " ve " + muz.sizediff + " diğer meyvenin ismi " + elma.namediff + " boyutu " + elma.sizediff; //haftaya bakılacak
+        // confirm("devam etmek istiyormusunuz?");,
+        // prompt("doğrulama kodunu giriniz");
+        // if(durum)ifade;
+        // if(durum){
+        //     ifade1;
+        //     ifade2; 
+        //     ifade3;
+        // }
+        if (1 < 0) alert("doğru");
+        var k = -10;
+        if (k < 0) k = -k;
+        console.log(k);
+
+        if (typeof k == "number")
+            console.log("sayı integer");
+        var m = 1300;
+        if (m > 1000) m = m * +0.85;
+        console.log(m);
+        var nb = 6.6;
+        if (nb % 2 == 0) sonuç = "çift";
+        else
+            sonuç = "tek";
+        console.log(sonuç);
+
+        if (Math.round(nb) % 2 == 0)
+            sonuç = Math.round(nb);
+        else {
+            if (nb < Math.round(nb)) sonuç = Math.round(nb) - 1
+            else
+                sonuç = Math.round(nb) + 1
+        }
+
+        console.log(sonuç);
+        sonuç = nb % 2 == 0 ? "çift" : "tek";
+        var kalan;
+        //kalan ($(1+1));//$ bu işlemi yaptırır
+
+        // if (protocol == "http") description = "hypertext transfer protocol";
+        // else if (protocol == "https") description = "secure hypertext transfer protocol";
+        // else if (protocol == "ftp") description = "file transfer protocol";
+        // else description = "unsupported protocol";
+
+        // switch (protocol) {
+        //     case "http": description = "hypertext transfer protocol";
+        //         break;
+        //     case "https": description = "secure hypertext transfer protocol";
+        //         break;
+        //     case "ftp": description = "file transfer protocol";
+        //         break;
+        //     default: description = "unsupported protocol";
+        // }
+        // var v=+prompt("bir ile 5 arasında değer girin?");
+        // var h="";
+        // switch(v){
+        //     case 1 :h+="1";
+        //     break;
+        //     case 2 :h+="2";
+        //     break;
+        //     case 3 :h+="3";
+        //     break;
+        //     case 4 :h+="4";
+        //     break;
+        //     default:h+="5";
+        // }
+        // alert(h);
+
+        var myList=['elma','armut','muz','portakal'];
+        myList[4]='kavun';
+        // myList.forEach(function(value,index){
+        //     // console.log(value, index);
+        //     alert("SEPETİNİZDE  "+value+"  bulunmaktadır")
+        // });
+        var defa=0;
+        // while(defa<10){
+        //     console.log((defa+1),'defa denendim')
+        //     defa++;
+
+        // }
+
+        do{
+            console.log((defa+1)+' defa denedim');
+            defa++;
+
+        }while(defa<10){console.log('deneme bitti')}
+        for (var i = 0; i < myList.length; i++) {
+            //console.log('î : '+i);
+            console.log('i: '+i+' elemanı: '+myList[i])
+            
+        }
+
+    </script>
+    <script src="./index.js">
+
+    </script>
+</body>
+
+</html>
