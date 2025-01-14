@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.open örneği</title>
+    <script>
+        function yeniPencereAc() {
+
+          var yeniPencere = window.open("https://medium.com/@sencerarslan/dom-ve-bom-nedir-temel-kavramlar-158bde2c4107", "_blank", "width=1000,height=600")
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>Yeni Pencere Açma</h1>
+    <button onclick="yeniPencereAc()">Yeni Pencere Aç</button>
+
+    <script>
+        // Tarayıcı adı
+        var tarayiciAdi = navigator.appName;
+        console.log("tarayıcı Adı:", tarayiciAdi);
+
+        // Tarayıcı versiyonu
+        var tarayiciVersiyonu = navigator.appVersiyon;
+        console.log("Tarayıcı Versiyonu", tarayiciVersiyonu);
+        // Kullanıcıajanı bilgisi
+        var kullaniciAjani = navigator.userAgent;
+        console.log("Kullanıcı Ajanı:", kullaniciAjani);
+        // Tarayıcı dilini alma
+        var tarayiciDili = navigator.language || navigator.userLanguage;
+        console.log("Tarayıcı Dili:", tarayiciDili);
+        // İşletim sistemi veya platform bilgisi
+        var platform = navigator.platform;
+        console.log("Platform:", platform);
+        var product = navigator.product;
+        console.log(product);
+        var coğrafiKonum = navigator.geolocation;
+        console.log(coğrafiKonum);
+        var connection =navigator.connection;
+        console.log(connection);
+        // var media =navigator.mediaDevices.getUserMedia({video:true, audio:true});
+        // console.log(media);
+        var codeName =navigator.appCodeName;
+        console.log(codeName);
+
+        var genislik =screen.width;
+        console.log(genislik);
+        var erisilebilirGenişlik = screen.availWidth;
+        console.log(erisilebilirGenişlik);
+        var yükseklik =screen.height;
+        console.log(yükseklik);
+        var erisilebilirYükseklik = screen.availHeight;
+        console.log(erisilebilirYükseklik);
+        var renkPaleti = screen.colorDepth;
+        console.log(renkPaleti);
+        var monitor=screen.pixelDepth;
+        console.log(monitor);
+        var orientatiton =screen.orientation;
+        console.log(orientatiton);
+        
+    </script>
+</body>
+
+</html>

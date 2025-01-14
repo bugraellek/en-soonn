@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,11 +22,34 @@
             border-radius: 10px;
             color: rgba(0, 0, 0, 0.3);
         }
+        div{
+            background-color: blue;
+            height: 50px;
+            width: 100px;
+        }
+
+        #dış{
+            border: 1px solid black;
+            height: 300px;
+            width: 300px;
+            position: relative;
+            margin: 20px;
+
+        }
+
+        #iç{
+            background-color: cadetblue;
+            height: 100px;
+            width: 100;
+            top: 75px;
+        }
 
     </style>
 </head>
 
-<body>
+<body onclick="hareketEttir(event)">
+
+<!-- <body onclick="tik.innerText= 'üzerine tıklandı: ' + event.target.nodeName"> -->
     <header>
         <h1>
             Js events
@@ -32,13 +57,15 @@
     </header>
         <main>
             <ul id="checklist">
-                <li class="edit">
+                <li>
                     <span>Elma</span>
                     <input value="Elma" />
+
                 </li>
                 <li>
                     <span>Portakal</span>
                     <input value="Portakal" />
+
                 </li>
                 <li>
                     <span>Muz</span>
@@ -47,7 +74,48 @@
                 </li>
             </ul>
         </main>
-        <script></script>
-    </header>
+<div id="hareket">
+    hareket edecek kısım
+</div>
+
+        <div></div>
+        <p id="tik"></p>
+
+
+
+
+
+
+
+
+
+<h1>fare girişi fare üstünde</h1>
+<div id="d1">
+    <div id="d2"></div>
+</div>
+
+<p>fare girişi <span id="=s1"></span></p>
+<p>üzerine gelen <span id="s2"></span></p>
+
+        <script src="/JS/events.js">
+
+        </script>
+        <script>
+            const d1 = document.getElementById('d1');
+            const d2 = document.getElementById('d2');
+            const s1 = document.getElementById('s1');
+            const s2 = document.getElementById('s2');
+            d1.onmouseenter= function() {
+                console.log("geldi d1")
+                
+            }
+            if(d1.onmouseenter){
+                s1.innertext = "girdi"
+            }
+        </script>
+
+</script>
+
 </body>
+
 </html>

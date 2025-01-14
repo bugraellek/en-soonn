@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>varsayılan tuş atama</title>
+</head>
+
+<body>
+    <h1>sayfaya tıklayın ve bir tuşa basın</h1>
+    <h2 id="out"></h2>
+    <script>
+        document.body.onkeydown= function(e) {
+            var txt ="";
+            if(e.ctrlKey) txt +="ctrl - ";
+            if(e.altKey) txt += "Alt - ";
+            if(e.shiftKey) txt +="Shift - ";
+            txt +=e.key ;
+            out.innerText =txt;
+        }
+
+    </script>
+</body>
+
+</html>
